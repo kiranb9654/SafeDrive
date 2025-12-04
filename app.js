@@ -1,13 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
-
-
 dotenv.config();
+const cookieParser = require('cookie-parser')
 
 const userRouter = require('./routes/user.routes');
 const connectToDB = require('./config/db');
-
-
 connectToDB();
 // console.log("MONGO_URI is:", process.env.MONGO_URI);
 
@@ -16,6 +13,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser())
 
 app.use('/user', userRouter);
 
