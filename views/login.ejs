@@ -9,9 +9,9 @@
 
   <body class="bg-gray-100 dark:bg-gray-900 h-screen w-screen flex items-center justify-center">
     
-    <form class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg" action="/user/register" method="post">
+    <form class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-lg" action="/user/login" method="post">
 
-      <!-- Username  -->
+      <!-- Grid: Username only -->
       <div class=" gap-6 mb-6 md:grid-cols-2">
         <div>
           <label for="username" class="block mb-2.5 text-sm font-medium text-white">User name</label>
@@ -26,18 +26,6 @@
         </div>
       </div>
 
-      <!-- Email  -->
-      <div class="mb-6">
-        <label for="email" class="block mb-2.5 text-sm font-medium text-white">Email address</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email"
-          class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body" 
-          placeholder="john.doe@company.com" 
-          required 
-        />
-      </div>
 
       <!-- Password  -->
       <div class="mb-6">

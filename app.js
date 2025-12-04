@@ -1,16 +1,24 @@
-const express = require('express')
+const express = require('express');
+const dotenv = require('dotenv');
 
-const userRouter = require('./routes/user.routes')
+
+dotenv.config();
+
+const userRouter = require('./routes/user.routes');
+const connectToDB = require('./config/db');
 
 
-const app = express()
+connectToDB();
+// console.log("MONGO_URI is:", process.env.MONGO_URI);
 
-app.set('view engine', 'ejs')
-app.use(express.json())
-app.use(express.urlencoded({ extended:true }))
+const app = express();
 
-app.use('/user', userRouter)
+app.set('view engine', 'ejs');
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/user', userRouter);
 
 app.listen(3000, () => {
-    console.log('server is running on port 3000')
-})
+    console.log('server is running on port 3000');
+});
