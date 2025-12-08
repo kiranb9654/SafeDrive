@@ -4,6 +4,7 @@ dotenv.config();
 const cookieParser = require('cookie-parser')
 
 const userRouter = require('./routes/user.routes');
+const indexRouter = require('./routes/index.routes')
 const connectToDB = require('./config/db');
 connectToDB();
 // console.log("MONGO_URI is:", process.env.MONGO_URI);
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
 
+app.use('/', indexRouter)
 app.use('/user', userRouter);
 
 app.listen(3000, () => {
