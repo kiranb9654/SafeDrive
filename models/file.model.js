@@ -4,7 +4,7 @@ const fileSchema = new mongoose.Schema(
   {
     path: {
       type: String,
-      required: [true, "Path is required"],
+      required: [true, "Path is required"], 
     },
     originalname: {
       type: String,
@@ -12,16 +12,15 @@ const fileSchema = new mongoose.Schema(
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",  
+      ref: "User",
       required: [true, "User is required"],
     },
   },
   {
-    timestamps: true, 
+    timestamps: true,
   }
 );
 
 const File = mongoose.model("File", fileSchema);
-
 module.exports = File;
 
